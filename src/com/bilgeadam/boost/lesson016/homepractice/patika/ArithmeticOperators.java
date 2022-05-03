@@ -1,4 +1,4 @@
-package com.bilgeadam.boost.lesson016.homepractice;
+package com.bilgeadam.boost.lesson016.homepractice.patika;
 
 public class ArithmeticOperators {
 
