@@ -14,6 +14,7 @@ public class Calculator {
 		System.out.println("enter first number");
 		n1 = o1.nextInt();
 		
+		
 		System.out.println("enter second number");
 		n2 =o1.nextInt();
 		
@@ -38,6 +39,7 @@ public class Calculator {
 			System.out.println("error");
 			return;
 	}
+		o1.close();
 		System.out.println("the result is" + " " + result);
 }
 
