@@ -2,17 +2,14 @@ package com.bilgeadam.boost.lesson016.homepractice;
 
 public class VaccumRobot {
 	
-	private String brandName;
+	
 	private int batteryCapacity = 100;
 	int distanceTravelledForward;
 	int distanceTravelledRight;
 	private boolean checkMap;
 	int checkDust=0;
 	
-	void showFeatures() {
-		System.out.println("Brand is: "+brandName);
 		
-		}	
 		private void remainingBattery() {
 		System.out.println("Remaining Battery: "+batteryCapacity);
 		
@@ -20,10 +17,6 @@ public class VaccumRobot {
 			System.out.println("Battery is low! Returning to the charging unit!");
 			}
 			
-		}
-		private void endVaccumJob() { //why this method is not coming to the manager class?
-		    System.out.println("Clean is completed succesfully");
-	
 		}
 		
 		void charge() { //this is information about charge capacity.
@@ -35,6 +28,7 @@ public class VaccumRobot {
 				remainingBattery();
 			}
 		}
+		
 		void map() { //this method provides to check map.
 			
 			if(checkMap == false) {
@@ -42,7 +36,7 @@ public class VaccumRobot {
 				} else if(checkMap == true)
 				distanceTravelledRight++;
 					
-			}
+		}
 		void dustStatus() {
 				if(checkDust>=10) {
 					System.err.println("Please check the dust bag. It is full");
@@ -51,6 +45,7 @@ public class VaccumRobot {
 					map();
 				
 		}
+		
 		void moveOneMeterForward() {
 			if(batteryCapacity<=0) {
 				remainingBattery();
@@ -62,6 +57,7 @@ public class VaccumRobot {
 				dustStatus();
 			}
 		}
+		
 		void moveOneMeterBackward() {
 			if(batteryCapacity<=0) {
 				remainingBattery();
@@ -74,6 +70,7 @@ public class VaccumRobot {
 				dustStatus();
 			}
 		}
+		
 		void moveOneMeterRight() {
 			if(batteryCapacity<=0) {
 				remainingBattery();
@@ -86,6 +83,7 @@ public class VaccumRobot {
 				dustStatus();
 			}
 		}
+		
 		void moveOneMeterLeft() {
 			if(batteryCapacity<=0) {
 				remainingBattery();
@@ -98,6 +96,7 @@ public class VaccumRobot {
 				dustStatus();
 			}
 		}
+		
 		void cleanRoomHall() {
 			
 				moveOneMeterBackward();
@@ -110,12 +109,14 @@ public class VaccumRobot {
 				moveOneMeterRight();
 			
 		}
+		
 		void cleanRoomKitchen() {
 				
 				moveOneMeterBackward();
 				moveOneMeterForward();
 			
 		}
+		
 		void cleanRoomBedRoom() {
 			
 				moveOneMeterBackward();
@@ -128,5 +129,10 @@ public class VaccumRobot {
 			
 				moveOneMeterBackward();
 				moveOneMeterRight();
+		}
+
+		private void endVaccumJob() { //why this method is not coming to the manager class?
+				System.out.println("Clean is completed succesfully");
+
 		}
 }
