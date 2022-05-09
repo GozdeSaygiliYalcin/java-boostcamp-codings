@@ -15,12 +15,11 @@ public class ShapeTest {
 		Scanner input =new Scanner(System.in);
 		System.out.println("please enter the lengths of the shape (max 4 sides) that you want calculate. You can exit using -1");
 		
-		
 		System.out.print("1.please enter the length of the first side (end with 0): ");
 		shape.side1=input.nextInt();
 		
 			if(shape.side1 == -1) {
-			System.out.println("the program is ended! bye");
+			System.out.println("The program is ended. Bye!");
 			break;
 			
 			} else if(shape.side1 ==0) {
@@ -32,7 +31,7 @@ public class ShapeTest {
 		shape.side2=input.nextInt();
 		
 			if(shape.side2 == -1) {
-			System.out.println("the program is ended! bye");
+			System.out.println("The program is ended. Bye!");
 			break;
 			} else if(shape.side2 ==0) {
 				shape.calcTwoSide();
@@ -43,7 +42,7 @@ public class ShapeTest {
 		shape.side3=input.nextInt();
 		
 			if(shape.side3 == -1) {
-			System.out.println("the program is ended! bye");
+			System.out.println("The program is ended. Bye!");
 			break;
 			
 			} else if(shape.side3 ==0) {
@@ -55,7 +54,7 @@ public class ShapeTest {
 		shape.side4=input.nextInt();
 		
 			if(shape.side4 == -1) {
-			System.out.println("the program is ended! bye");
+			System.out.println("The program is ended. Bye!");
 			break;
 		
 			} else if  (shape.side1 != 0 && shape.side2 !=0 && shape.side3 != 0 && shape.side4 !=0) {
