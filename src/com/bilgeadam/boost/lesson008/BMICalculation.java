@@ -1,6 +1,5 @@
 package com.bilgeadam.boost.lesson008;
 
-import java.text.BreakIterator;
 import java.util.Scanner;
 
 public class BMICalculation {
@@ -48,6 +47,7 @@ public class BMICalculation {
 			
 		}else {
 		System.out.println("Obese");
+		o1.close();
 	}
 		
 }

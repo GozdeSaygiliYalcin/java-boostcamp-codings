@@ -19,6 +19,7 @@ public class RawPrice {
 		rawPrice = (priceWithoutVat*100)/(115);
 		
 		System.out.println("Raw Price="+rawPrice);
+		s1.close();
 	}
 
 }

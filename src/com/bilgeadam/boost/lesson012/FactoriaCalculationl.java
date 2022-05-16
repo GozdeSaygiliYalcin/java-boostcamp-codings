@@ -3,7 +3,7 @@ package com.bilgeadam.boost.lesson012;
 public class FactoriaCalculationl {
 
 	public static void main(String[] args) {
-		int number =5;
+		int number =6;
 		double fact = calculateClassicalFactorial(number);
 	
 		System.out.println("Factorial of number is " + number);
