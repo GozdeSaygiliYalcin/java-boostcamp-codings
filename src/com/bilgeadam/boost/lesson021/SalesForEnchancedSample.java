@@ -10,8 +10,8 @@ public class SalesForEnchancedSample {
 	public static void main(String[] args) {
 		// 2021 and 2022 (north, south, east, west)
 		
-		double sales2021North,sales2021South, sales2021East, sales2021West;
-		double sales2022North,sales2022South, sales2022East, sales2022West;
+//		double sales2021North,sales2021South, sales2021East, sales2021West;
+//		double sales2022North,sales2022South, sales2022East, sales2022West;
 		
 		double [] sales =new double[8]; //first 4 items(as north, south, east, west) 20221 and 2022 equals 8 items.
 		
