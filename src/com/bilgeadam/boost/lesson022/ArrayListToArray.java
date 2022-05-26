@@ -25,6 +25,7 @@ public class ArrayListToArray {
 		//Access elements of the array
 			for (String language : arr) {
 				System.out.println(language);
+				
 			
 			}
 			

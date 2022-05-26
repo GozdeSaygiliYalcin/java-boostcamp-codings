@@ -2,6 +2,9 @@ package com.bilgeadam.boost.lesson026.afternoon.hospital;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.bilgeadam.boost.lesson017.superclass.Employee;
 
 public class HospitalTest {
 
@@ -23,11 +26,29 @@ public class HospitalTest {
 		System.out.println(n1 + " new salary is: " + n1.rateOfIncrease(1.35));
 		System.out.println(j1 + "  new salary is: " +j1.rateOfIncrease(1.65));
 		System.out.println(d1 +  " new salary is: " +d1.rateOfIncrease(1.28));
-			
-		List<Manager> managerList = new ArrayList<Manager>();
-		managerList.add(m1);
-		managerList.add(m2);
-		System.out.println(managerList.toString());
+		
+		List<Person> employeeList = new ArrayList<Person>();
+		employeeList.add(m1);
+		employeeList.add(m2);
+		employeeList.add(n1);
+		employeeList.add(n2);
+		employeeList.add(j1);
+		employeeList.add(j2);
+		employeeList.add(d1);
+		employeeList.add(d2);
+		
+		List<Person> managerList = employeeList.stream().filter(person -> person.getJob().equalsIgnoreCase("m"))
+		.collect(Collectors.toList());
+		
+		for (Person person2 : managerList) {
+			System.out.println(person2);
+		}
+		System.out.println("=============================================");
+		
+		List<Manager> managerList2 = new ArrayList<Manager>();
+		managerList2.add(m1);
+		managerList2.add(m2);
+		System.out.println(managerList2.toString());
 	}
 
 }
