@@ -4,32 +4,33 @@ import java.util.Scanner;
 
 public class CheckingAccount extends BankAccount {
 
-	public CheckingAccount(int accountNumber, String accountName, int balance) {
-		super(accountNumber, accountName, balance);
+	public CheckingAccount(int accountNumber, String accountName) {
+		super(accountNumber, accountName);
 	}
 
 	@Override
 	public void depositMoney(double amountDeposit) {
 		
-		System.out.println(amountDeposit +" money is deposited to your account");
+		if(amountDeposit>0) {
+			balance = balance + amountDeposit;
+		}
 		
+			System.out.println(amountDeposit +" money is deposited to your account");
+			System.out.println("Your balance is " + balance);
 	}
 	public void withdrawMoney(double amountWithdraw) {
-		
-		 System.out.println("Please enter amount of the money that you wanted withdraw");
-		 Scanner input = new Scanner(System.in);
-		 amountWithdraw= input.nextInt();
-		 
-			 if (amountWithdraw>this.getBalance()) {
-				 System.out.println("Insufficient balance!");	 
-			 } 
-			 else if (getBalance()>amountWithdraw)	 {
-				
-			double currentBalance = getBalance()-amountWithdraw;
+	
+		if (amountWithdraw>this.getBalance()) {
 			
-				 System.out.println("You withdrawed " + amountWithdraw +" of money");
-				 System.out.println("Your balance is " + currentBalance);
-				
-		 	}
+			 System.out.println("Insufficient balance!");	 
+		 } 
+		 else if (getBalance()>amountWithdraw)	 {
+			
+		 double currentBalance = getBalance()-amountWithdraw;
+		
+			System.out.println("You withdrawed " + amountWithdraw +" of money");
+			System.out.println("Your balance is " + currentBalance);
+			
+	 	}
 	}
 }

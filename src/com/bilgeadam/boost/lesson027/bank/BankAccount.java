@@ -4,16 +4,23 @@ public abstract class BankAccount {
 	
 	private int accountNumber;
 	private String accountName;
-	private int balance;
+	protected double balance;
 	
 	
-	public BankAccount(int accountNumber, String accountName, int balance) {
+	public BankAccount(int accountNumber, String accountName, double balance) {
 		super();
 		this.accountNumber = accountNumber;
 		this.accountName = accountName;
-		this.balance = balance;
+		this.balance = 0;
 		
 	}
+	
+	public BankAccount(int accountNumber, String accountName) {
+		super();
+		this.accountNumber = accountNumber;
+		this.accountName = accountName;
+	}
+
 	public abstract void depositMoney(double amount);
 	
 	public int getAccountNumber() {
@@ -24,14 +31,10 @@ public abstract class BankAccount {
 		return this.accountName;
 	}
 	
-	public int getBalance() {
+	public double getBalance() {
 		return this.balance;
 	}
 	
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
-
 	@Override
 	public String toString() {
 		return "BankAccount [accountNumber=" + this.accountNumber + ", accountName=" + this.accountName + ", balance="
