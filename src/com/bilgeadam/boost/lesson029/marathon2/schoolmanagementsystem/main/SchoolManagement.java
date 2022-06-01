@@ -69,7 +69,7 @@ public class SchoolManagement {
 		mainMenu.put(5, "ASSIGN STUDENTS TO A CLASS");
 		mainMenu.put(6, "SHOW LIST OF CLASSES");
 		mainMenu.put(7, "CLASSES ATTENDED BY THE STUDEN");
-		mainMenu.put(8, "SENDIN GIFT LIST");
+		mainMenu.put(8, "SENDING GIFT LIST");
 		mainMenu.put(9, "SALARY CALCULATION LIST");
 		mainMenu.put(10, "EXIT FROM THE APPLICATION");
 		
