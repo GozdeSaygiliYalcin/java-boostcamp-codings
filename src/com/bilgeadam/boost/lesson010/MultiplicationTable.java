@@ -15,7 +15,7 @@ public class MultiplicationTable {
 			System.out.println(n1);
 		}
 		calc=n1*n2;
-		System.out.println(n1 + n2 + calc);
+		System.out.print(n1 + n2 + calc);
 
 	}
 
