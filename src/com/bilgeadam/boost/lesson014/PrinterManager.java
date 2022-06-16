@@ -11,7 +11,6 @@ public class PrinterManager {
 			PrinterManager manager = new PrinterManager();
 			manager.initPrinter();
 			manager.startPrintJob();
-			manager.printer.statusReport();
 		
 		}
 		private void initPrinter() {
@@ -23,30 +22,36 @@ public class PrinterManager {
 			printer.setPrinterName("My printer");
 			printer.statusReport();
 				
-			System.out.println(printer);	//in order to check general values.
+		//	System.out.println(printer);	//in order to check general values.
 		
 	}
 		private void startPrintJob() {
-			Scanner in = new Scanner(System.in);
-			System.out.println("How many pages dou you want to print?");
-			int numPages =in.nextInt();
-			in.nextLine();
 			
-			boolean colorPrint = false;
-			if(printer.isColorCapable())
-			System.out.println("Do you want to print colorful? Y or N");
-			colorPrint = in.nextLine().equalsIgnoreCase("e");
-			{
-			boolean twoSided = false;
-			if(printer.isTwoSidedCapable())
-			System.out.println("Do you want to print colorful? Y or N");
-			colorPrint = in.nextLine().equalsIgnoreCase("e");
+			Scanner in = new Scanner(System.in);
+			while(true) {
+			
+				System.out.println("How many pages dou you want to print?");
+				int numPages =in.nextInt();
+				in.nextLine();
+				if (numPages == 0) {
+					break;
+				}
+			
+				boolean colorPrint = false;
+				if(printer.isColorCapable())
+				System.out.println("Do you want to print colorful? Y or N");
+				colorPrint = in.nextLine().equalsIgnoreCase("e");
+				{
+				boolean twoSided = false;
+				if(printer.isTwoSidedCapable())
+				System.out.println("Do you want to print colorful? Y or N");
+				colorPrint = in.nextLine().equalsIgnoreCase("e");
 				
-			System.out.println(numPages);
+				printer.startPrintJob(numPages, colorPrint, twoSided); // akış diyagramında "emri işle"
 			}
 			in.close();
 			
 		}
 	}
-
+}
 
