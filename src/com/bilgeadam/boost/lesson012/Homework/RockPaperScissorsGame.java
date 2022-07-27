@@ -1,8 +1,10 @@
 package com.bilgeadam.boost.lesson012.Homework;
+import java.util.Random;
+import java.util.Scanner;
 
 public class RockPaperScissorsGame {
-	import java.util.Random;
-	import java.util.Scanner;
+
+
 
 	public class RockPaperScissors {
 
@@ -59,6 +61,8 @@ public class RockPaperScissorsGame {
 			}
 			
 		}
-		}
 	}
+}
+}
+	
 

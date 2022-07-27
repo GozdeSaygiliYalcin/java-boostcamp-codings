@@ -5,7 +5,7 @@ public class ArrayRepetitive {
 	public static void main(String[] args) {
 		
 		
-		int [] array1 = {3, 7, 12, 43, 54, 43, 28, 3, 19, -24, -19};
+		int [] array1 = {3, 7, 12, 43, 54, 43, 28, 3, 19, -24, -19, 3, 3};
 		
 		
 		for (int i=0; i<array1.length; i++) {

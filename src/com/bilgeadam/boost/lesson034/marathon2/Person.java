@@ -4,31 +4,22 @@ import java.time.LocalDate;
 
 public abstract class Person {
 	
-	private String firstName;
-	private String middleName;
-	private String lastName;
-	private String gender;
-	private boolean isMarried;
-	private LocalDate birthDate;
+	private String firstName; //must
+	private String middleName; //optional
+	private String lastName; //must
+	private String gender; //optional
+	private boolean isMarried;//optional
+	private LocalDate birthDate;//optional
 	
-	public Person(String firstName, String lastName, String gender, boolean isMarried, LocalDate birthDate) {
+	public Person(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.gender = gender;
-		this.isMarried = isMarried;
-		this.birthDate = birthDate;
+	
 	}
 	
-	public Person(String firstName, String middleName, String lastName, String gender, boolean isMarried, LocalDate birthDate) {
-		this(firstName, lastName, gender, isMarried, birthDate);
-		this.middleName = middleName;
-	}
-
 	@Override
-	public String toString() { //we created full name with middle name and without middle name
-		String fullName = getFullName();
-		
+	public String toString() { //we created full name with middle name and without middle name	
 		return "Person [Name=" + this.getFullName() + ", gender=" + this.gender
 				+ ", isMarried=" + this.isMarried + ", birthDate=" + this.birthDate + "]";
 	}

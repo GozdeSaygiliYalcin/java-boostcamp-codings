@@ -2,32 +2,52 @@ package com.bilgeadam.boost.lesson009;
 
 import java.util.Scanner;
 
+/**
+ * Kullanıcının girdiği bir kelimenin palindrom olup olmadığını 
+ * kontrol edin
+ * 
+ * String'lerin .charAt(i) metodunu kullanabilirsiniz
+ */
 public class Palindrom {
 
+	/**
+	 * Kullanıcının girdiği bir kelimenin palindrom olup olmadığını 
+	 * kontrol edin
+	 * 
+	 * String'lerin .charAt(i) metodunu kullanabilirsiniz
+	 */
 	public static void main(String[] args) {
-	
-		Scanner o1 =new Scanner(System.in);
-		System.out.print("please enter a word:");
-		String palindromeCanditate = o1.nextLine();
-		
-		palindromeCanditate = palindromeCanditate.trim(); //girilen metinin başındaki ve sonundaki spaceleri siler
-		int length = palindromeCanditate.length(); //girilen metnin uzunluğunu ölçüyor
-		palindromeCanditate = palindromeCanditate.toLowerCase(); //girilen metni tamamen küçük harfe döndürüyor
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Lütfen bir kelime giriniz: ");
+		String palindromeCandidate = scanner.nextLine();
+
+		palindromeCandidate = palindromeCandidate.trim();			// girilen metnin baş ve sonundaki space'leri silmek için
+		int length 			= palindromeCandidate.length();			// girilen metnin uzunluğunu öğrenmek için
+		palindromeCandidate = palindromeCandidate.toLowerCase();	// girilen metni tümüyle küçük harflere döndürmek için
 		
 		boolean isPalindrome = true;
-		for(int i =0; i<=length/2; i++) {
-			if(palindromeCanditate.charAt(i) != palindromeCanditate.charAt(length-i-1)) {
-				isPalindrome =false;
+		for (int i=0; i<=length/2; i++) {
+			if (palindromeCandidate.charAt(i) != palindromeCandidate.charAt(length - i - 1)) {
+				isPalindrome = false;
 				break;
 			}
 		}
-		String result = palindromeCanditate +" " + "bir" + " " +(isPalindrome ? "palindromdur" : "palindrom degildir");
 		
+		/* for'lu çözüme alternatif
+		int i = 0;
+		while (i <= length/2) {
+			if (palindromeCandidate.charAt(i) != palindromeCandidate.charAt(length - i - 1)) {
+				isPalindrome = false;
+				break;
+			}
+			i++;
+		} 
+		*/
+		
+		String result = palindromeCandidate + " bir " + (isPalindrome ? "palindromdur." : "palindrom değildir.");
 		System.out.println(result);
-		
-		o1.close();
-		System.out.println("Bye");
-
+		scanner.close();
+		System.out.println("bye bye");
 	}
 
 }

@@ -20,3 +20,4 @@ public class MyThread2 implements Runnable{
 		System.out.println(thread.getName());
 	}
 }
+

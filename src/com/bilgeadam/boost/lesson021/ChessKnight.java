@@ -15,16 +15,19 @@ public class ChessKnight {
 	
 	public static void main(String[] args) {
 		
-		Chess chessGame = new Chess();
+		ChessKnight chessGame = new ChessKnight();
 		chessGame.initChessBoard();
 		chessGame.readKnightPosition();
 		chessGame.calculatePossiblePositions();
 		chessGame.printChessBoard();
 		
-		
-		for (int i=0; i<8; i++) {
-			Arrays.fill(chess[i], EMPTY_CELL);
+		private void printChessBoard() {
+			for (int row=7; row>=0; row--) {
+				Arrays.fill(chess[i], EMPTY_CELL);
 		}
+		
+		
+		
 		
 		chess = readKnightPosition(chess);
 		chess = calculatePossibleMove(chess);

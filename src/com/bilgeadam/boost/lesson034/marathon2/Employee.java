@@ -7,29 +7,19 @@ public abstract class Employee extends Person {
 	private String idNumber;
 	private LocalDate startDate;
 	private LocalDate endDate;
-	private double startSalary;
+	protected double startSalary;
 	private String[] telephoneNumbers;
 	
 
-	public Employee(String firstName, String lastName, String gender, boolean isMarried, LocalDate birthDate,
-			LocalDate startDate, double startSalary) {
-		super(firstName, lastName, gender, isMarried, birthDate);
-		this.startDate = startDate;
-		this.startSalary = startSalary;
-		this.endDate = null;
-		
-	}
-	
-	public Employee(String firstName, String middleName, String lastName, String gender, boolean isMarried, LocalDate birthDate,
-			LocalDate startDate, double startSalary) {
-		super(firstName, lastName, gender, isMarried, birthDate);
+	public Employee(String firstName, String lastName, double startSalary, LocalDate startDate) {
+		super(firstName, lastName);
 		this.startDate = startDate;
 		this.startSalary = startSalary;
 		this.endDate = null;
 		this.idNumber = this.createIDNumber();
 		
 	}
-
+	
 	public abstract String createIDNumber();
 
 	public LocalDate getStartDate() {

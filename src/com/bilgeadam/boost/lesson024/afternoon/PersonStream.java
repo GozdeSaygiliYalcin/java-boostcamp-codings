@@ -24,6 +24,9 @@ public class PersonStream {
 		personList.add(new Person("Nanete","Blunsden","Female",81));
 		
 		
+		for (int i = 0; i < personList.size(); i++) {
+			
+		
 		List<Person> newList = personList.stream().filter(person -> person.age < 50).collect(Collectors.toList());
 		newList.stream().forEach(person -> System.out.println(person));
 		System.out.println("====================================");
@@ -50,6 +53,6 @@ public class PersonStream {
 		
 		projectedMaleList.stream().forEach(person-> System.out.println(person.age + " " + person.firstName));
 		
+		}
 	}
-
 }

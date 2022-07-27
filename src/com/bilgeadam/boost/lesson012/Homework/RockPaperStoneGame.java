@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class RockPaperStoneGame {
 
 	public static void main(String[] args) {
-		int computerMove;
+	
+		int computerMove = getRandomMove(0); 
 		int yourMove;
-
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Let the game begin");
@@ -24,34 +24,41 @@ public class RockPaperStoneGame {
 	  	if(computerMove == 1) {
 		  		if(yourMove == 1) {
 		  			System.out.println("It is scoreless");
-		  	} else if {
-		  		if(yourMove == 2)  {
+		  	}
+	  		else if(yourMove == 2)  {
 		  			System.out.println("You win!");
-		  	} else {
+		  	} 
+		  		else {
 		  			System.out.println("You lost!");
+		  		}
 	  	}
 	  	if(computerMove == 2) {
 		  		if(yourMove == 2) {
 		  			System.out.println("It is scoreless");
-		  	} else if {
-		  		if(yourMove == 1)  {
+		  	} 
+		  	else if(yourMove == 1)  {
 		  			System.out.println("You win!");
-		  	} else {
+		  		}
+		  	}
+		  	else {
 		  		System.out.println("You lost!");
 		  }
 		  if(computerMove == 3) {
 		  		if(yourMove == 3) {
 		  			System.out.println("It is scoreless");
-		  	} else if {
+		  	} else  {
 		  		if(yourMove == 1)  {
 		  			System.out.println("You win!");
 		  	} else {
 		  		System.out.println("You lost!");
 		  	}
-	  	}
+	  	
+	}
+	}
+		  }
 	private static int getRandomMove(int computerMove) {
 		Random rnd =new Random();
 		int randomMove = rnd.nextInt(3);
 		return randomMove;
-}
+	}
 }

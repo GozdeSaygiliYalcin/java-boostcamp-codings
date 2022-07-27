@@ -12,18 +12,17 @@ public class SchoolManagementSystem {
 	private static final int         EXIT = 99;
 	private HashMap<Integer, String> menuItems;
 	private List<Employee>           employees;
-	
-	
-	public SchoolManagementSystem(HashMap<Integer, String> menuItems) {
+	private List<Student>            students;
+	private List<Class>              classes;
+
+	public SchoolManagementSystem() {
 		super();
 		this.menuItems = new HashMap<>();
 		this.employees = new LinkedList<>();
+		this.students  = new LinkedList<>();
+		this.classes   = new LinkedList<>();
 	}
-		
-	public SchoolManagementSystem() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public static void main(String[] args) {
 		
 		BAUtil.header("School Management System");
@@ -36,16 +35,24 @@ public class SchoolManagementSystem {
 			this.initMenuItems();
 
 			boolean exit = false;
+			
 			while (!exit) {
-				int sel = BAUtil.menu(menuItems);
-				if (sel == SchoolManagementSystem.EXIT) {
-					exit = BAUtil.wantToEnd("Are you sure?", "y");
+				int selection = BAUtil.menu(menuItems);
+				if (selection == SchoolManagementSystem.EXIT) {
+					exit = BAUtil.wantToEnd("Are you sure?", "n");
 					continue;
 				}
-				this.processSelection(sel);
+				try {
+					this.processSelection(selection);
+				}
+				catch (UnknownPersonTypeException ex) {
+					System.err.println(ex.getMessage());
+				}
+				
 			}
 		}
-		private void processSelection(int sel) {
+		
+		private void processSelection(int sel) throws UnknownPersonTypeException {
 			switch(sel) {
 			
 			case 1:

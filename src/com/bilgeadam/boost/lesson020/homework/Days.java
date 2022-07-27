@@ -1,4 +1,4 @@
-package com.bilgeadam.boost.lesson020.hıomework;
+package com.bilgeadam.boost.lesson020.homework;
 
 public class Days {
 	public static void main(String[] args) {

@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
+
 
 public class FileReaderExample {
 
@@ -17,9 +17,10 @@ public class FileReaderExample {
 			System.exit(10);
 		}
 		FileReader fileReader = null;
+		BufferedReader reader = null;
 		try {
 			fileReader = new FileReader(myFile);
-			BufferedReader reader =new BufferedReader(fileReader);
+			reader =new BufferedReader(fileReader);
 			while(true) {
 				String line = reader.readLine();
 				if(line == null) {
@@ -44,9 +45,9 @@ public class FileReaderExample {
 					ex.printStackTrace();
 					}
 				}
-			if(reader !=null) {
+			if(fileReader !=null) {
 				try {
-					reader.close();
+					fileReader.close();
 				}
 				catch(IOException ex) {
 				ex.printStackTrace();
